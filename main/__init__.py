@@ -5,7 +5,7 @@ from main.plugins.extensions import db, csrf
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kEW@4ZTF@localhost/todos'
     app.config['SECRET_KEY'] = 'VG0^XPSf%hScY5TpS1#9lkQrTr@uBT8C'
     register_extensions(app)
     register_blueprints(app)
