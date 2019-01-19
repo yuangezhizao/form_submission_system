@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>TODOS</title>
+    <meta name="author" content="yuangezhizao"/>
+    <meta name="Copyright" content="Copyright yuangezhizao All Rights Reserved."/>
+    <link rel="stylesheet" href="/static/main.css" type="text/css">
+    <link rel="dns-prefetch" href="//lab.yuangezhizao.cn">
+    <link rel="dns-prefetch" href="//www.yuangezhizao.cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<div id="container">
+    <h1>TODOS 列表</h1>
+    <form action="/todos" method="POST">
+        <input type="text" name="details"/>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="submit" value="新增"/>
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>{{ todo.details }}</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
